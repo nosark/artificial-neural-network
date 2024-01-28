@@ -2,7 +2,7 @@ use crate::iris::Iris;
 
 #[allow(dead_code)]
 #[derive(Debug, Clone)]
-pub struct Perceptron {
+pub struct Neuron {
     learning_rate: f64,
     epochs: u32,
     weights: Vec<Vec<f64>>,
@@ -11,9 +11,9 @@ pub struct Perceptron {
 }
 
 #[allow(dead_code)]
-impl Perceptron {
+impl Neuron {
     pub fn new(learning_rate: Option<f64>, epochs: Option<u32>, input: &Vec<Iris>) -> Self {
-        Perceptron {
+        Neuron {
             learning_rate: learning_rate.unwrap_or(0.1),
             epochs: epochs.unwrap_or(10),
             weights: vec![vec![1e-4; 4]; input.len()],
